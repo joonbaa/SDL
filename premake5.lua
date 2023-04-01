@@ -9,6 +9,7 @@ project "SDL"
     includedirs
     {
 	    "src",
+        "include"
     }
 
 	files
