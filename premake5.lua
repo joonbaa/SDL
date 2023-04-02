@@ -21,6 +21,10 @@ project "SDL"
 
         "src/audio/*.c",
         "src/audio/*.h",
+        "src/audio/disk/*.c",
+        "src/audio/disk/*.h",
+        "src/audio/dummy/*.c",
+        "src/audio/dummy/*.h",
 
         "src/cpuinfo/*.c",
 
@@ -51,6 +55,7 @@ project "SDL"
         "src/events/SDL_scancode_tables.c",
         "src/events/SDL_scancode_tables_c.h",
         "src/events/SDL_touch.c",
+        "src/events/SDL_windowevents.*",
         "src/events/SDL_touch_c.h",
 
         "src/file/SDL_rwops.c",
@@ -63,6 +68,10 @@ project "SDL"
 
         "src/joystick/*.c",
         "src/joystick/*.h",
+        "src/joystick/virtual/*.c",
+        "src/joystick/virtual/*.h",
+        "src/joystick/hidapi/**.c",
+        "src/joystick/hidapi/**.h",
 
         "src/libm/*.c",
         "src/libm/*.h",
@@ -76,12 +85,18 @@ project "SDL"
         "src/power/*.c",
         "src/power/*.h",
 
-        "src/render/*.c",
-        "src/render/*.h",
+        "src/render/SDL_render.c",
+        "src/render/SDL_sysrender.h",
+        "src/render/SDL_yuv_sw.c",
+        "src/render/SDL_yuv_sw_c.h",
         "src/render/software/*.c",
         "src/render/software/*.h",
         "src/render/opengl/*.c",
         "src/render/opengl/*.h",
+        "src/render/opengles/*.c",
+        "src/render/opengles/*.h",
+        "src/render/opengles2/*.c",
+        "src/render/opengles2/*.h",
 
         "src/sensor/*.c",
         "src/sensor/*.h",
@@ -95,11 +110,20 @@ project "SDL"
         "src/thread/*.c",
         "src/thread/*.h",
 
+        "src/thread/generic/*.c",
+        "src/thread/generic/*.h",
+
         "src/timer/*.c",
         "src/timer/*.h",
 
         "src/video/*.c",
         "src/video/*.h",
+
+        "src/video/dummy/*.c",
+        "src/video/dummy/*.h",
+
+        "src/video/yuv2rgb/*.c",
+        "src/video/yuv2rgb/*.h",
 	}
 
 	filter "system:windows"
@@ -109,11 +133,14 @@ project "SDL"
 		{
             "src/audio/directsound/*.c",
             "src/audio/directsound/*.h",
+            "src/audio/wasapi/*.c",
+            "src/audio/wasapi/*.h",
+            "src/audio/winmm/*.c",
+            "src/audio/winmm/*.h",
 
             "src/core/windows/*.h",
             "src/core/windows/*.c",
 
-            "src/events/SDL_windowsevents.*",
             "src/events/scancodes_windows.h",
 
             "src/filesystem/windows/SDL_sysfilesystem.c",
@@ -140,6 +167,16 @@ project "SDL"
             "src/power/windows/*.c",
             "src/power/windows/*.h",
 
+            "src/render/SDL_d3dmath.c",
+            "src/render/SDL_d3dmath.h",
+
+            "src/render/direct3d/*.c",
+            "src/render/direct3d/*.h",
+            "src/render/direct3d11/*.c",
+            "src/render/direct3d11/*.h",
+            "src/render/direct3d12/*.c",
+            "src/render/direct3d12/*.h",
+
             "src/sensor/windows/*.c",
             "src/sensor/windows/*.h",
 
@@ -160,7 +197,10 @@ project "SDL"
 
 		links
 		{
-
+            "setupapi",
+            "winmm",
+            "imm32",
+            "version",
 		}
 
 	filter "configurations:Debug"
